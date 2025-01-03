@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attack Detection Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Intrusion Detection System</h1>
+    <p>Analyze and detect network attacks using AI</p>
+  </header>
+
+  <main>
+    <form id="attackForm">
+      <h2>Enter Attack Features</h2>
+
+      <div class="form-group">
+        <label for="srcIP">Source IP Address:</label>
+        <input type="text" id="srcIP" name="srcIP" placeholder="e.g., 192.168.1.1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destIP">Destination IP Address:</label>
+        <input type="text" id="destIP" name="destIP" placeholder="e.g., 10.0.0.2" required>
+      </div>
+
+      <div class="form-group">
+        <label for="protocol">Protocol:</label>
+        <select id="protocol" name="protocol" required>
+          <option value="">-- Select Protocol --</option>
+          <option value="TCP">TCP</option>
+          <option value="UDP">UDP</option>
+          <option value="ICMP">ICMP</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="srcPort">Source Port:</label>
+        <input type="number" id="srcPort" name="srcPort" placeholder="e.g., 443" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destPort">Destination Port:</label>
+        <input type="number" id="destPort" name="destPort" placeholder="e.g., 80" required>
+      </div>
+
+      <div class="form-group">
+        <label for="payloadSize">Payload Size (Bytes):</label>
+        <input type="number" id="payloadSize" name="payloadSize" placeholder="e.g., 1024" required>
+      </div>
+
+      <div class="form-group">
+        <label for="timestamp">Timestamp:</label>
+        <input type="datetime-local" id="timestamp" name="timestamp" required>
+      </div>
+
+      <button type="submit">Detect Attack</button>
+    </form>
+
+    <div id="result">
+      <h2>Detection Result</h2>
+      <p id="resultMessage">Awaiting input...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 CyberSec AI Detection Platform</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
